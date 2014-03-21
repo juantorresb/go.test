@@ -1,4 +1,4 @@
-package logs
+package log
 
 import (
 	"io"
@@ -24,8 +24,8 @@ func init() {
 	WARNING = log.New(multi, "WRN: ", log.Ldate|log.Ltime|log.Lshortfile)
 }
 
-func Logger() {
+func Logger() bool {
 	INFO.Println("program running...")
 	WARNING.Println("program running...")
-
+	return true
 }

@@ -1,0 +1,16 @@
+1. descargar la herramienta "cover", ejecutar:
+-> go get code.google.com/p/go.tools/cmd/cover
+
+2. ejecutar covertura a un paquete en especifico, tiene que tener definido un fichero de prueba.
+-> go test -cover
+
+3. para generar reportes de la covertura (paquete especifico)
+-> go test -coverprofile=c.out
+-> go tool cover -html=c.out -o coverage.html
+
+- Genera un fichero coverage.html con el reporte de cobertura.
+
+* Para ver las ayudas de la herramienta
+-> go tool cover -help
+	
+	
