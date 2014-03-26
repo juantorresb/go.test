@@ -1,4 +1,4 @@
-
+GOPATH_=/home/go/devel
 GOPATH=$GOPATH:/var/lib/jenkins/workspace/go/
 
 myhostname := $(shell hostname)
@@ -14,3 +14,7 @@ install:
 test:
 	go test go.test/first/
 	go test go.test/log/
+
+coverage:
+	go test -coverprofile=coverage.out -covermode count go.test/first
+	$GOPATH_/bin/gocover-cobertura < coverage.out >  coverage.xml
